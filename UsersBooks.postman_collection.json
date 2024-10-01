@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "837b292d-7b1d-4887-8f64-920a9841b12e",
+		"name": "UsersBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34459307"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"luminarakash\",\r\n  \"email\": \"luminarakash@gmail.com\",\r\n  \"password\": \"Fake@123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"luminarakash@gmail.com\",\r\n    \"password\": \"Fake@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZmI5ODMxYmNhMTU5NTJjYzQzMGYzNyIsInVzZXJuYW1lIjoibHVtaW5hcmFrYXNoIiwiaWF0IjoxNzI3NzY0NzY5LCJleHAiOjE3NTkzMjE2OTV9.MrCwjRu271ygjBqPSsgMeLt_mXr6AcBgWIwwJW2gSfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/users/profile/66fb9831bca15952cc430f37",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"profile",
+						"66fb9831bca15952cc430f37"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit_profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZmI5ODMxYmNhMTU5NTJjYzQzMGYzNyIsInVzZXJuYW1lIjoibHVtaW5hcmFrYXNoIiwiaWF0IjoxNzI3NzY0NzY5LCJleHAiOjE3NTkzMjE2OTV9.MrCwjRu271ygjBqPSsgMeLt_mXr6AcBgWIwwJW2gSfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"luminarankit\",\r\n    \"bio\": \"Full Stack Devekoper\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/edit/66fb9831bca15952cc430f37",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"edit",
+						"66fb9831bca15952cc430f37"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book_add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZmI5ODMxYmNhMTU5NTJjYzQzMGYzNyIsInVzZXJuYW1lIjoibHVtaW5hcmFrYXNoIiwiaWF0IjoxNzI3NzY0NzY5LCJleHAiOjE3NTkzMjE2OTV9.MrCwjRu271ygjBqPSsgMeLt_mXr6AcBgWIwwJW2gSfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"MERN Stack\",\r\n  \"author\": \"Mr. Akash\",\r\n  \"description\": \"Be the best version of your self.\",\r\n  \"genre\": \"Esier\",\r\n  \"userId\": \"66fb9831bca15952cc430f37\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/books/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"books",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_bookID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZmI5ODMxYmNhMTU5NTJjYzQzMGYzNyIsInVzZXJuYW1lIjoibHVtaW5hcmFrYXNoIiwiaWF0IjoxNzI3NzY0NzY5LCJleHAiOjE3NTkzMjE2OTV9.MrCwjRu271ygjBqPSsgMeLt_mXr6AcBgWIwwJW2gSfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/books/66fb9fe74aabcd57301ff691",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"books",
+						"66fb9fe74aabcd57301ff691"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
